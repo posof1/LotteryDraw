@@ -28,9 +28,9 @@
     "xlsx": "^0.7.12"
   },
   "devDependencies": {
+    "bower": "^1.8.8",
     "forever": "latest",
-    "mocha": "latest",
-    "bower": "latest"
+    "mocha": "latest"
   },
   "window": {
     "title": "抽獎程式",

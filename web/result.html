@@ -27,7 +27,7 @@
 <body ng-controller="ResultCtrl">
     <div class="mg-canvas">
         <div class="page-header mg-header">
-            <div class="mg-header-title">歲末抽抽樂 - 得獎名單</div>
+            <div class="mg-header-title">年終抽獎-第一組(資訊處、會計處) - 得獎名單</div>
             <div class="btn-group-lg" style="position:absolute; top: 20px; right: 20px">
                 <div class="btn-group">
                     <button class="btn dropdown-toggle btn-primary" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></button>
@@ -54,6 +54,7 @@
                     <div ng-repeat="winnerBatch in prize.winners" class="row">
                         <div ng-repeat="winner in winnerBatch" class="col-md-2 well well-lg" style="margin:4px">
                             <span class="mg-tile-emp-depart">{{winner.depart}}</span>
+                            <span class="mg-tile-emp-title">{{winner.title}}</span>
                             <span class="mg-tile-emp-name">{{winner.name}}</span>
                         </div>
                     </div>

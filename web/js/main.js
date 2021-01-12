@@ -331,19 +331,19 @@ app.controller('GameCtrl', ['$scope', '$http', '$q', '$modal', '$confirm', '$win
     //
     $scope.giveup = function(draw) {
         /*
-            { draw.depart, draw.name }
+            { draw.depart, draw.name, draw.title }
          */
         var url = '/api/giveupprize';
-        var postData = {id:$scope.prize.id, depart:draw.depart, name:draw.name};
+        var postData = {id:$scope.prize.id, depart:draw.depart, name:draw.name, title:draw.title};
 
         $http.post(url, postData)
             .success(function(data, status, header, config) {
                 // update $scope.drawResult
                 //
-                var dw = _.find($scope.drawResult, function(dw) { return dw.depart == draw.depart && dw.name == draw.name});
+                var dw = _.find($scope.drawResult, function(dw) { return dw.depart == draw.depart && dw.title == draw.title});
                 dw.giveupState = true;
 
-                _.remove($scope.prize.winners, function(dw) {return dw.depart == draw.depart && dw.name == draw.name;});
+                _.remove($scope.prize.winners, function(dw) {return dw.depart == draw.depart && dw.title == draw.title;});
             })
             .error(function(data, status, header, config) {
                 $scope.error = error;
@@ -423,7 +423,7 @@ app.controller('GameCtrl', ['$scope', '$http', '$q', '$modal', '$confirm', '$win
             });
 
             $scope.getDraw = function(index) {
-                var stub = {depart:'', name:''};
+                var stub = {depart:'', name:'', title:''};
                 if (!$scope.drawResult || $scope.drawResult.length == 0)
                     return stub;
 
@@ -540,7 +540,7 @@ app.controller('GameCtrl', ['$scope', '$http', '$q', '$modal', '$confirm', '$win
             };
 
             $scope.getWinner = function(index) {
-                var stub = {depart:'', name:''};
+                var stub = {depart:'', name:'', title:''};
                 if (!$scope.winners || $scope.winners.length == 0)
                     return stub;
 

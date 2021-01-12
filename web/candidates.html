@@ -29,7 +29,7 @@
 <body ng-controller="CandidatesCtrl">
     <div class="mg-canvas">
         <div class="page-header mg-header">
-            <div class="mg-header-title" ng-cloak>歲末抽抽樂 - 未抽出名額</div>
+            <div class="mg-header-title" ng-cloak>年終抽獎-第一組(資訊處、會計處) - 未抽出名額</div>
             <div class="btn-group-lg" style="position:absolute; top: 20px; right: 20px">
                 <div class="btn-group">
                     <button class="btn dropdown-toggle btn-primary" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></button>
@@ -54,7 +54,9 @@
                 <div ng-repeat="batch in viewData.batches" class="row">
                     <div ng-repeat="employee in batch" class="col-md-2 well well-lg" style="margin:4px">
                         <span class="mg-tile-emp-depart">{{employee.depart}}</span>
+                        <span class="mg-tile-emp-title">{{employee.title}}</span>                       
                         <span class="mg-tile-emp-name">{{employee.name}}</span>
+                        
                     </div>
                 </div>
             </div>
